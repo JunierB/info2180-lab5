@@ -1,5 +1,4 @@
 /* Add your own styles */
-
 * {
     margin: 0;
     padding: 0;
@@ -64,8 +63,6 @@ label {
     border-color: #764ba2;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
-
-/* Common button styles */
 button {
     padding: 12px 24px;
     color: white;
@@ -87,8 +84,6 @@ button:hover {
 button:active {
     transform: translateY(0);
 }
-
-/* Lookup Country button - Purple gradient */
 #lookup {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
@@ -96,8 +91,6 @@ button:active {
 #lookup:hover {
     background: linear-gradient(135deg, #7c8ef0 0%, #8a5bb0 100%);
 }
-
-/* Lookup Cities button - Teal/Green gradient */
 #lookup-cities {
     background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
