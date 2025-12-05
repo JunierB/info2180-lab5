@@ -5,25 +5,34 @@ $password = 'password123';
 $dbname = 'world';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-
-// Get the country parameter from the GET request
 $country = isset($_GET['country']) ? $_GET['country'] : '';
-
-// Prepare the SQL query based on whether a country is specified
 if (!empty($country)) {
-    // Use prepared statement to prevent SQL injection
     $stmt = $conn->prepare("SELECT * FROM countries WHERE name LIKE :country");
     $stmt->execute(['country' => "%$country%"]);
 } else {
-    // If no country specified, return all countries
     $stmt = $conn->query("SELECT * FROM countries");
 }
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<ul>
+<table>
+    <thead>
+    <tr>
+        <th>Country Name</th>
+        <th>Continent</th>
+        <th>Independence Year</th>
+        <th>Head of State</th>
+    </tr>
+    </thead>
+    <tbody>
     <?php foreach ($results as $row): ?>
-        <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
+        <tr>
+            <td><?= $row['name']; ?></td>
+            <td><?= $row['continent']; ?></td>
+            <td><?= $row['independence_year']; ?></td>
+            <td><?= $row['head_of_state']; ?></td>
+        </tr>
     <?php endforeach; ?>
-</ul>
+    </tbody>
+</table>
