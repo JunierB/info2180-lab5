@@ -39,16 +39,19 @@ main {
     gap: 10px;
     margin-bottom: 30px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 label {
     font-weight: 600;
     color: #333;
     font-size: 1.1em;
+    white-space: nowrap;
 }
 
 #country {
     flex: 1;
+    min-width: 200px;
     padding: 12px 15px;
     border: 2px solid #667eea;
     border-radius: 8px;
@@ -62,9 +65,9 @@ label {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
-#lookup {
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* Common button styles */
+button {
+    padding: 12px 24px;
     color: white;
     border: none;
     border-radius: 8px;
@@ -73,15 +76,34 @@ label {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
-#lookup:hover {
+button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-#lookup:active {
+button:active {
     transform: translateY(0);
+}
+
+/* Lookup Country button - Purple gradient */
+#lookup {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#lookup:hover {
+    background: linear-gradient(135deg, #7c8ef0 0%, #8a5bb0 100%);
+}
+
+/* Lookup Cities button - Teal/Green gradient */
+#lookup-cities {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+#lookup-cities:hover {
+    background: linear-gradient(135deg, #1aaa9c 0%, #4ef58d 100%);
 }
 
 #result {
